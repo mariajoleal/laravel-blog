@@ -3,7 +3,12 @@
 @section('content')
     <div class="row">
       <div class="col-md-12">
-        <p>Here comes the article content</p>
+        <h1 >{{ $post['title'] }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>{{ $post['content'] }}</p>
       </div>
     </div>
 @endsection

@@ -10,7 +10,7 @@
     </head>
     <body>
       @include('partials.admin-header')
-      <div class="container">
+      <div class="container p-3">
         @yield('content')
       </div>
 
