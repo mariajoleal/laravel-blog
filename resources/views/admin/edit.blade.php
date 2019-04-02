@@ -7,13 +7,14 @@
       <form action="{{ route('admin.update') }}" method="post">
         <div class="form-group">
           <label for="title">Title</label>
-          <input name="title" type="text" class="form-control" id="title" value="{{ $data['title'] }}">
+          <input name="title" type="text" class="form-control" id="title" value="{{ $post['title'] }}">
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <input name="content" type="text" class="form-control" id="content" value="{{ $data['content'] }}">
+          <input name="content" type="text" class="form-control" id="content" value="{{ $post['content'] }}">
         </div>
         {{ csrf_field() }}
+        <input type="hidden" name="id" value={{ $postId }}>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
