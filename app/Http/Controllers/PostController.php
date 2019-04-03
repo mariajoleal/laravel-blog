@@ -20,7 +20,8 @@ class PostController extends Controller
     public function getPost($id) {
         $post = Post::find($id);
         $comments = Post::find($id)->comments;
-        return view('blog.article', ['post' => $post, 'comments' => $comments]);
+        $categories = $post->categories;
+        return view('blog.article', ['post' => $post, 'comments' => $comments, 'categories' => $categories]);
     } 
 
     public function getAdminCreate() {
