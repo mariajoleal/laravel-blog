@@ -9,6 +9,12 @@
     <div class="row">
       <div class="col-md-12">
         <p>{{ $post->content }}</p>
+        <h6>Comments:</h6>
+        <ul>
+          @foreach ($comments as $comment)
+            <li>{{ $comment->text }}</li>           
+          @endforeach
+        </ul>
       </div>
     </div>
 @endsection

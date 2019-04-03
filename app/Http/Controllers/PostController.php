@@ -19,7 +19,8 @@ class PostController extends Controller
 
     public function getPost($id) {
         $post = Post::find($id);
-        return view('blog.article', ['post' => $post]);
+        $comments = Post::find($id)->comments;
+        return view('blog.article', ['post' => $post, 'comments' => $comments]);
     } 
 
     public function getAdminCreate() {
