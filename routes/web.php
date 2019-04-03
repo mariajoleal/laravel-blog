@@ -55,4 +55,34 @@ Route::group(['prefix' => 'admin'], function() {
         'uses' => 'PostController@adminDelete',
         'as' => 'admin.delete'
     ]);
+
+    Route::get('categories', [
+        'uses' => 'CategoryController@getCategories',
+        'as' => 'admin.categories'
+    ]);
+
+    Route::get('create-category', [
+        'uses' => 'CategoryController@getCreateCategory',
+        'as' => 'admin.createCategory'
+    ]);
+    
+    Route::post('create-category', [
+        'uses' => 'CategoryController@postCreateCategory',
+        'as' => 'admin.createCategory'
+    ]);
+
+    Route::get('edit-category/{id}', [
+        'uses' => 'CategoryController@getEditCategory',
+        'as' => 'admin.editCategory'
+    ]);
+    
+    Route::post('edit-category', [
+        'uses' => 'CategoryController@postUpdateCategory',
+        'as' => 'admin.updateCategory'
+    ]);
+
+    Route::get('delete-category/{id}', [
+        'uses' => 'PostController@deleteCategory',
+        'as' => 'admin.deleteCategory'
+    ]);
 });
